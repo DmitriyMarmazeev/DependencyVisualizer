@@ -1,0 +1,7 @@
+{
+    "repo_path": "C:/Users/marma/PycharmProjects/DependencyVisualizer/test_git",
+    "branch": "master",
+    "visualizer_program_path": "C:/Program Files/Graphviz/bin/dot.exe",
+    "graph_output_path": "C:/Users/marma/PycharmProjects/DependencyVisualizer/test_git/graphs",
+    "target_file": ".gitignore"
+}
