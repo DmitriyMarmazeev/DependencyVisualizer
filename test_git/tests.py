@@ -1,9 +1,8 @@
 import unittest
 import os
 import json
-from datetime import datetime
 
-from main import DependencyVisualizer
+from DependencyVisualizer import DependencyVisualizer
 
 
 class TestDependencyVisualizer(unittest.TestCase):
