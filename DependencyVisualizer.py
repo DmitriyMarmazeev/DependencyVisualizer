@@ -115,12 +115,16 @@ class DependencyVisualizer:
     def add_one_to_parents_if_target_found(self, tree, target_file):
         """Рекурсивно добавлять '1' в начало label родительским узлам, если найден target_file в label одного из детей."""
 
-        def recursive_add(node):
+        def recursive_add(node):  # , is_tree=False):
             # Переменная для проверки, был ли найден target_file у этого узла или у его детей
             found_target = False
 
             # Если узел типа [blob], проверяем, содержит ли его label target_file
             if '[blob]' in node['label']:
+                # if is_tree:
+                #     if not node['label'].startswith('1'):
+                #         node['label'] = '1' + node['label']
+                #         return False
                 if target_file in node['label']:
                     # Если находим target_file, ставим '1' в начало label
                     if not node['label'].startswith('1'):
@@ -137,10 +141,14 @@ class DependencyVisualizer:
             if found_target and not node['label'].startswith('1'):
                 node['label'] = '1' + node['label']
 
-            # if found_target and "[tree]" in node['label']:
+            # if (found_target or is_tree) and "[tree]" in node['label']:
             #     for child in node['children']:
             #         if not child['label'].startswith('1'):
             #             child['label'] = '1' + child['label']
+            #         recursive_add(child, True)
+
+            if "[commit]" in node["label"]:
+                found_target = False
 
             return found_target
 
