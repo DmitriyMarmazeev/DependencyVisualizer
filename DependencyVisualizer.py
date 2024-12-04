@@ -205,4 +205,6 @@ class DependencyVisualizer:
 
 if __name__ == "__main__":
     visualizer = DependencyVisualizer('config.json')
-    visualizer.generate_png_from_dot('filtered_graph.dot', visualizer.config["graph_output_path"])
+    visualizer.generate_png_from_dot('filtered_graph.dot', visualizer.config["graph_output_path"] +
+                                     "/" + visualizer.config["repo_path"].split("/")[-1] +
+                                     "/" + visualizer.config["branch"])
