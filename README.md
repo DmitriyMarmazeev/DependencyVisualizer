@@ -75,7 +75,7 @@
 
 ## Примеры использования
 
-
+https://github.com/user-attachments/assets/e63ec37a-4d02-4d46-b605-4906bb0a4629
 
 ---
 
